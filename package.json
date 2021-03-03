@@ -1,0 +1,23 @@
+{
+  "name": "studio-react",
+  "version": "1.0.0",
+  "description": "React Desech Studio Plugin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:desech/studio-react.git"
+  },
+  "author": "Desech",
+  "license": "ISC",
+  "homepage": "https://www.desech.com",
+  "engines": {
+    "node": ">=12"
+  },
+  "desech": {
+    "title": "React",
+    "author": "Desech",
+    "category": "exportCode",
+    "url": "https://github.com/desech/studio-react",
+    "autoupdate": true
+  }
+}
