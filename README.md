@@ -5,7 +5,7 @@
 - In Desech Studio
   - Go to Settings > Plugins, search for "React" and install it
   - Go to File > Project Settings > Export Code Plugin > set to "React"
-- Using a design system works with this plugin, because we copy over the same css/js file.
+- Using a design system works with this plugin, because we copy over all the css/js files.
 
 ## Test the react app
 

@@ -2,10 +2,10 @@ const Plugin = require('./lib/Plugin.js')
 
 // executed by electron's node.js
 module.exports = {
-  saveToFile (data) {
-    Plugin.syncAppFiles(data.folder)
-    Plugin.syncPublicFolder(data.folder)
+  async saveToFile (data) {
+    await Plugin.syncAppFiles(data.folder)
+    await Plugin.syncPublicFolder(data)
     Plugin.syncIndexHtml(data.folder)
-    Plugin.syncJsCode(data.folder)
+    Plugin.syncJsCode(data.folder, data.htmlFiles)
   }
 }
