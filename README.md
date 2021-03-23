@@ -42,6 +42,17 @@ npm install react-router-dom
 - delete create-react-app
 - edit `index.js` and remove the `import './index.css';` line
 
+## Included npm packages
+
+All Desech Studio plugins have access to the following npm libraries, because they come with the application:
+- `lib.AdmZip` [adm-zip](https://www.npmjs.com/package/adm-zip)
+- `lib.archiver` [archiver](https://www.npmjs.com/package/archiver)
+- `lib.fse` [fs-extra](https://www.npmjs.com/package/fs-extra)
+- `lib.jimp` [jimp](https://www.npmjs.com/package/jimp)
+- `lib.beautify` [js-beautify](https://www.npmjs.com/package/js-beautify)
+- `lib.jsdom` [jsdom](https://www.npmjs.com/package/jsdom)
+- `lib.fetch` [node-fetch](https://www.npmjs.com/package/node-fetch)
+
 ## Documentation
 
 Go to [facebook/create-react-app](https://github.com/facebook/create-react-app) to read the documentation.
