@@ -22,6 +22,26 @@ npm start
 - Every time you save desech, it will push updates to the react app
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
+## Desech studio usage
+
+- Inside Desech Studio you will find in the HTML section of an element, a sub-section called `Programming Properties`. Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
+  - You can't set `className` because it's already set by `Desech Studio`
+- To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
+  - `reactIf` with `unreadMessages.length > 0` will export this react code:
+    - `{unreadMessages.length > 0 && <div>...</div>}`
+  - `reactFor` with `props.posts/post` will export this react code:
+    - `{props.posts.map(post => <li>...</li>)}`
+    - Please remember to add a `key` property too, for example `key` = `{post.id}`
+  - `reactIfFor with `test === 1/props.posts/post` will export this react code:
+    - `{test === 1 && props.posts.map(post => <li>...</li>)}`
+  - `reactForIf with `props.posts/post/post.id > 0` will export this react code:
+    - `{props.posts.map(post => post.id > 0 && <li>...</li>}`
+  - Only one of these properties is allowed to exist on one element. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
+- Make sure you set an `alt` value for images, otherwise react will complain about it
+- `checked` html attributes are removed; instead use the programming property `defaultChecked`
+- `selected` html attributes are removed; instead use the programming property `value` in the `select` element instead of the `option` element
+- Anywhere inside text you can write `{user.userId}` and it will be exported as such and react will see it as code
+
 ## Development
 
 If you plan on helping out with code or extend this plugin, do the following:
