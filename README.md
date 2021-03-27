@@ -36,6 +36,7 @@ npm start
   - `reactForIf` with `users :: user :: user.id > 0` will export this react code:
     - `{users.map(user => user.id > 0 && <li>...</li>}`
   - Only one of these properties is allowed to exist on one element. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
+  - As you have noticed the split string between these values is a ` :: ` - double colon with spaces in between.
 - Make sure you set an `alt` value for images, otherwise react will complain about it
 - `checked` html attributes are removed; instead use the programming property `defaultChecked`
 - `selected` html attributes are removed; instead use the programming property `value` in the `select` element instead of the `option` element
