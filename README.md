@@ -28,12 +28,12 @@ npm start
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
     - `{users.length > 0 && <div>...</div>}`
-  - `reactFor` with `users || user` will export this react code:
+  - `reactFor` with `users :: user` will export this react code:
     - `{users.map(user => <li>...</li>)}`
     - Please remember to add a `key` property too, for example `key` = `{user.id}`
-  - `reactIfFor` with `users.length > 0 || users || user` will export this react code:
+  - `reactIfFor` with `users.length > 0 :: users :: user` will export this react code:
     - `{users.length > 0 && users.map(user => <li>...</li>)}`
-  - `reactForIf` with `users || user || user.id > 0` will export this react code:
+  - `reactForIf` with `users :: user :: user.id > 0` will export this react code:
     - `{users.map(user => user.id > 0 && <li>...</li>}`
   - Only one of these properties is allowed to exist on one element. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
 - Make sure you set an `alt` value for images, otherwise react will complain about it
