@@ -28,8 +28,8 @@ npm start
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `unreadMessages.length > 0` will export this react code:
     - `{unreadMessages.length > 0 && <div>...</div>}`
-  - `reactFor` with `props.posts/post` will export this react code:
-    - `{props.posts.map(post => <li>...</li>)}`
+  - `reactFor` with `users/user` will export this react code:
+    - `{users.map(user => <li>...</li>)}`
     - Please remember to add a `key` property too, for example `key` = `{post.id}`
   - `reactIfFor` with `test === 1/props.posts/post` will export this react code:
     - `{test === 1 && props.posts.map(post => <li>...</li>)}`
