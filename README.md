@@ -26,15 +26,15 @@ npm start
 - Inside Desech Studio you will find in the HTML section of an element, a sub-section called `Programming Properties`. Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
   - You can't set `className` because it's already set by `Desech Studio`
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
-  - `reactIf` with `unreadMessages.length > 0` will export this react code:
-    - `{unreadMessages.length > 0 && <div>...</div>}`
+  - `reactIf` with `users.length > 0` will export this react code:
+    - `{users.length > 0 && <div>...</div>}`
   - `reactFor` with `users/user` will export this react code:
     - `{users.map(user => <li>...</li>)}`
-    - Please remember to add a `key` property too, for example `key` = `{post.id}`
-  - `reactIfFor` with `test === 1/props.posts/post` will export this react code:
-    - `{test === 1 && props.posts.map(post => <li>...</li>)}`
-  - `reactForIf` with `props.posts/post/post.id > 0` will export this react code:
-    - `{props.posts.map(post => post.id > 0 && <li>...</li>}`
+    - Please remember to add a `key` property too, for example `key` = `{user.id}`
+  - `reactIfFor` with `users.length > 0/users/user` will export this react code:
+    - `{users.length > 0 && users.map(user => <li>...</li>)}`
+  - `reactForIf` with `users/user/user.id > 0` will export this react code:
+    - `{users.map(user => user.id > 0 && <li>...</li>}`
   - Only one of these properties is allowed to exist on one element. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
 - Make sure you set an `alt` value for images, otherwise react will complain about it
 - `checked` html attributes are removed; instead use the programming property `defaultChecked`
