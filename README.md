@@ -20,9 +20,8 @@ npm start
 
 - Now you can access you react app at `http://localhost:3000/`
 - Every time you save desech, it will push updates to the react app
-- That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
-## Desech studio usage
+## Tips
 
 - Inside Desech Studio you will find in the HTML section of an element, a sub-section called `Programming Properties`. Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
   - You can't set `className` because it's already set by `Desech Studio`
@@ -41,6 +40,8 @@ npm start
 - `checked` html attributes are removed; instead use the programming property `defaultChecked`
 - `selected` html attributes are removed; instead use the programming property `value` in the `select` element instead of the `option` element
 - Anywhere inside text you can write `{user.userId}` and it will be exported as such and react will see it as code
+
+- That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
 ## Development
 
