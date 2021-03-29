@@ -11,10 +11,10 @@
 
 - In Desech Studio add an element to the canvas and Save.
 - Every time you save, the react app files will be copied over to the `_export` folder of your desech project.
-- There you can run the following, to test the react app
+- There you can run the following, to test the react app:
 
 ```sh
-npm install
+npm install --force
 npm start
 ```
 
@@ -51,18 +51,20 @@ If you plan on helping out with code or extend this plugin, do the following:
 - delete everything in the `dist` folder so we can restart the build process
 
 ```sh
-cd dist
+cd /~/somewhere-but-not-inside-the-plugin-folder
 git clone https://github.com/facebook/create-react-app
 npx create-react-app my-app
 cd my-app
-- make sure you commit everything to git
 npm run eject
 npm install react-router-dom
+rm -rf node_modules public .git package-lock.json yarn.lock
+cd src
+rm -rf App* index.css logo.svg
 ```
 
-- delete `node_modules`, `public`, `yarn.lock` and everything from `src` except `index.js` and `reportWebVitals.js`
-- delete create-react-app
-- edit `index.js` and remove the `import './index.css';` line
+- open the `src/index.js` file and delete the `import './index.css';` line
+- move the `my-app` folder to the plugin `dist` folder
+- you can delete the `create-react-app` folder and anything you setup for it
 
 ## Included npm packages
 
@@ -75,6 +77,6 @@ All Desech Studio plugins have access to the following npm libraries, because th
 - `lib.jsdom` [jsdom](https://www.npmjs.com/package/jsdom)
 - `lib.fetch` [node-fetch](https://www.npmjs.com/package/node-fetch)
 
-## Documentation
+## Other Documentation
 
-Go to [facebook/create-react-app](https://github.com/facebook/create-react-app) to read the documentation.
+- Go to [facebook/create-react-app](https://github.com/facebook/create-react-app) to read the documentation.
