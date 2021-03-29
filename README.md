@@ -40,7 +40,7 @@ npm start
     - `{users.length > 0 && users.map(user => <li>...</li>)}`
   - `reactForIf` with `users :: user :: user.id > 0` will export this react code:
     - `{users.map(user => user.id > 0 && <li>...</li>}`
-  - You can only have one of these poperties at one time. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
+  - You can only have one of these properties at one time. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
   - As you have noticed the split string between these values is a ` :: ` - double colon with spaces in between.
 
 ### Tips
@@ -73,6 +73,11 @@ rm -rf App* index.css logo.svg
 - open the `src/index.js` file and delete the `import './index.css';` line
 - move the `my-app` folder to the plugin `dist` folder
 - you can delete the `create-react-app` folder and anything you setup for it
+
+```sh
+cd /~/user/.config/Electron/plugin/desech-studio-react
+npm install
+```
 
 ## Included npm packages
 
