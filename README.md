@@ -21,9 +21,14 @@ npm start
 - Now you can access you react app at `http://localhost:3000/`
 - Every time you save inside Desech Studio, it will push updates to the react app
 
-## Tips
+## Desech Studio integration
 
-- Inside Desech Studio you will find in the HTML section of an element, a sub-section called `Programming Properties`. Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
+### React attributes/properties
+
+- Inside Desech Studio there are 2 places where you can add react attributes/properties:
+  - when you click on a component
+  - when you click on an html element in the HTML section > Element properties
+- Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
   - You can't set `className` because it's already set by `Desech Studio`
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
@@ -35,12 +40,15 @@ npm start
     - `{users.length > 0 && users.map(user => <li>...</li>)}`
   - `reactForIf` with `users :: user :: user.id > 0` will export this react code:
     - `{users.map(user => user.id > 0 && <li>...</li>}`
-  - Only one of these properties is allowed to exist on one element. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
+  - You can only have one of these poperties at one time. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
   - As you have noticed the split string between these values is a ` :: ` - double colon with spaces in between.
+
+### Tips
+
 - Make sure you set an `alt` value for images, otherwise react will complain about it
-- `checked` html attributes are removed; instead use the programming property `defaultChecked`
-- `selected` html attributes are removed; instead use the programming property `value` in the `select` element instead of the `option` element
-- Anywhere inside text you can write code like `{user.userId}` and it will be exported as such and react will see it as code
+- `checked` html attributes are removed; instead use the property `defaultChecked`
+- `selected` html attributes are removed; instead use the property `value` in the `select` element instead of the `option` element
+- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
