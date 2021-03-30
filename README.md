@@ -65,6 +65,11 @@ npx create-react-app my-app
 cd my-app
 npm run eject
 npm install react-router-dom
+```
+
+- Cleanup
+
+```sh
 rm -rf node_modules public .git package-lock.json yarn.lock
 cd src
 rm -rf App* index.css logo.svg
