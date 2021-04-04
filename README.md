@@ -29,7 +29,7 @@ npm start
   - when you click on a component
   - when you click on an html element in the HTML section > Element properties
 - Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
-  - You can't set `className` because it's already set by `Desech Studio`
+  - If you set `className` it will be added to the existing classes set by `Desech Studio`
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
     - `{users.length > 0 && <div>...</div>}`
