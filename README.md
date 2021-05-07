@@ -49,6 +49,7 @@ npm start
 - `checked` html attributes are removed; instead use the property `defaultChecked`
 - `selected` html attributes are removed; instead use the property `value` in the `select` element instead of the `option` element
 - Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code
+- SVG code inside html is poorly supported by JSX, so it's best to include svg as images
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
