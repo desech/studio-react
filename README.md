@@ -1,4 +1,4 @@
-# React plugin for Desech Studio
+# React plugin for [Desech Studio](https://www.desech.com/)
 
 [www.desech.com](https://www.desech.com/)
 
@@ -101,3 +101,7 @@ All Desech Studio plugins have access to the following npm libraries, because th
 ## Other Documentation
 
 - Go to [facebook/create-react-app](https://github.com/facebook/create-react-app) to read the documentation.
+
+## Desech Studio website
+
+ - [www.desech.com](https://www.desech.com/)
