@@ -7,7 +7,6 @@
 - In Desech Studio
   - Go to Settings > Plugins > React and install it
   - Go to File > Project Settings > Export Code Plugin > set to "React"
-- Using a design system works with this plugin, because we copy over all the css/js files.
 
 ## Test the react app
 
@@ -27,10 +26,8 @@ npm start
 
 ### React attributes/properties
 
-- Inside Desech Studio there are 2 places where you can add react attributes/properties:
-  - when you click on a component
-  - when you click on an html element in the HTML section > Element properties
-- Here you can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
+- Inside Desech Studio you can add react attributes/properties in the Programming properties of both elements and components
+- You can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
   - If you set `className` it will be added to the existing classes set by `Desech Studio`
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
@@ -59,11 +56,9 @@ npm start
 
 If you plan on helping out with code or extend this plugin, do the following:
 
-- delete everything in the `dist` folder so we can restart the build process
-
 ```sh
-cd /~/somewhere-but-not-inside-the-plugin-folder
-git clone https://github.com/facebook/create-react-app
+cd dist
+rm -rf *
 npx create-react-app my-app
 cd my-app
 npm run eject
