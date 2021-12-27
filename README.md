@@ -62,6 +62,7 @@ cd /~/user/.config/Electron/plugin
 rm -rf desech-studio-react
   - if you have the react plugin already install, delete it
 git clone git@github.com:desech/studio-react.git desech-studio-react
+  - you might need to use your own fork of this repo on github
 npm i -f
 cd dist
 rm -rf *
@@ -69,6 +70,7 @@ npx create-react-app my-app
 cd my-app
 npm run eject
   - you might need to git commit and push all changes before ejecting if you are in a git repo
+  - alternatively you can just remove the `.git` folder
 npm install react-router-dom
 rm -rf node_modules public .git package-lock.json yarn.lock
 cd src
@@ -76,8 +78,9 @@ rm -rf App* index.css logo.svg
 - open the `src/index.js` file and delete the `import './index.css';` line
 ```
 
-Now `Desech Studio` will use this git repository for the react plugin instead of the standard one.
-Warning: Make sure you don't touch the version in the `package.json` file, because Desech Studio will try to upgrade and it will delete everything and re-download the new version of this plugin.
+- Now `Desech Studio` will use this git repository for the react plugin instead of the standard one.
+- Warning: Make sure you don't touch the version in the `package.json` file, because Desech Studio will try to upgrade and it will delete everything and re-download the new version of this plugin.
+  - Only update the version when you git push everything and you are done with development
 
 ## Included npm packages
 
