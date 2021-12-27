@@ -6,6 +6,6 @@ module.exports = {
     await Plugin.syncAppFiles(data.folder)
     await Plugin.syncStaticFolders(data)
     Plugin.syncIndexHtml(data.folder)
-    Plugin.syncJsCode(data, lib.jsdom.JSDOM)
+    Plugin.syncJsCode(data, lib)
   }
 }

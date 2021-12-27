@@ -26,6 +26,7 @@ npm start
 
 ### React attributes/properties
 
+- Anchor links need to follow this format `/contact` with a backslash at the beginning and no `.html` extension at the end
 - Inside Desech Studio you can add react attributes/properties in the Programming properties of both elements and components
 - You can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
   - If you set `className` it will be added to the existing classes set by `Desech Studio`
