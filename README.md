@@ -26,8 +26,8 @@ npm start
 
 ### React attributes/properties
 
-- Anchor links need to follow this format `/contact` with a backslash at the beginning and no `.html` extension at the end
-- Inside Desech Studio you can add react attributes/properties in the Programming properties of both elements and components
+- Anchor links need to follow this format `/contact.html` with a backslash at the beginning and an `.html` extension at the end
+- Inside Desech Studio you can add react attributes/properties in the Programming properties for both elements and components
 - You can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
   - If you set `className` it will be added to the existing classes set by `Desech Studio`
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
@@ -48,8 +48,8 @@ npm start
 - Make sure you set an `alt` value for images, otherwise react will complain about it
 - `checked` html attributes are removed; instead use the property `defaultChecked`
 - `selected` html attributes are removed; instead use the property `value` in the `select` element instead of the `option` element
-- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code
-- SVG code inside html is poorly supported by JSX, so it's best to include svg as images
+- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code. But it's recommended you set data with `state` not manually add it in Desech Studio through text and attributes. This will help the designer not having to deal with code.
+- SVG code inside html is poorly supported by JSX, so make sure the svg is clean without styles and meta tags
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
