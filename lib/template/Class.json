@@ -1,0 +1,26 @@
+{
+  // instance component data
+  "component": {
+    "e0cmpref1": {
+      "overrides": {},
+      "variants": {}
+    }
+  },
+  // main component and instance component
+  "defaultTag": {
+    "e0cmpref1": {
+      "class": "TestSimpleHey",
+      "file": "../component/test/simple/Hey.js"
+    },
+    "e0ref": { "tag": "p" }
+  },
+  // main component
+  "variantOverrides": {
+    "state": {
+      "disabled": {
+        "e0xx1": { "tag": "h1" },
+        "e0xx2": { "inner": "Text" }
+      }
+    }
+  }
+}
