@@ -29,7 +29,6 @@ npm start
 - Anchor links need to follow this format `/contact.html` with a backslash at the beginning and an `.html` extension at the end
 - Inside Desech Studio you can add react attributes/properties in the Programming properties for both elements and components
 - You can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
-  - If you set `className` it will be added to the existing classes set by `Desech Studio`
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
     - `{users.length > 0 && <div>...</div>}`
