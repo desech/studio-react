@@ -35,6 +35,7 @@ npm start
   - `reactFor` with `users :: user` will export this react code:
     - `{users.map(user => <li>...</li>)}`
     - Please remember to add a `key` property too, for example `key` = `{user.id}`
+    - If you don't want a custom `key` then you can just use `reactFor` = `users :: (user, index)` and `key` = `{index}`
   - `reactIfFor` with `users.length > 0 :: users :: user` will export this react code:
     - `{users.length > 0 && users.map(user => <li>...</li>)}`
   - `reactForIf` with `users :: user :: user.id > 0` will export this react code:
