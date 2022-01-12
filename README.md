@@ -43,20 +43,20 @@ npm start
   - You can only have one of these properties at one time. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
   - As you have noticed the split string between these values is a ` :: ` - double colon with spaces in between.
 
-### Limitations
-
-- `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
-- Using js code like `{user}` in text and property values works, but if you add it as a component override, then it will no longer be parsed as code.
-  - This happens because when dealing with html text, we use `dangerouslySetInnerHTML` and this doesn't render js code inside.
-  - As for property values, the overrides are coming from the component parent which has all the data stored as a json. Changing this from strings to actual code will show errors, since we will need those variables set in both the parent component and the child component that has the overrides.
-
 ### Tips
 
 - Make sure you set an `alt` value for images, otherwise react will complain about it
-- `checked` html attributes are removed; instead use the property `defaultChecked`
-- `selected` html attributes are removed; instead use the property `value` in the `select` element instead of the `option` element
-- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code. But it's recommended you set data with `state` not manually add it in Desech Studio through text and attributes. This will help the designer to not have to deal with code.
+- `selected` attributes are removed from `<option>` elements; instead use the property `defaultValue` in `<select>` instead of `<option>`
 - SVG code inside html is poorly supported by JSX, so make sure the svg is clean without styles and meta tags
+- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code. But it's recommended you set data with `state` not manually add it in Desech Studio through text and attributes. This will help the designer to not have to deal with code.
+
+### Limitations
+
+- Using js code like `{user}` in text and property values works, but if you add it as a component override, then it will no longer be parsed as code.
+  - This happens because when dealing with html text, we use `dangerouslySetInnerHTML` and this doesn't render js code inside.
+  - As for property values, the overrides are coming from the component parent which has all the data stored as a json. Changing this from strings to actual code will show errors, since we will need those variables set in both the parent component and the child component that has the overrides.
+- `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
+- The `className` property set in Desech Studio is ignored because it causes issues with overrides.
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
