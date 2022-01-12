@@ -70,7 +70,7 @@ npm run storybook
 ```
 
 - You can start by deleting everything in the `_export/src/stories` folder
-- Then create you first story for one of your components, for example `Foo`:
+- Then create your first story for one of your components, for example `Foo.stories.js` inside the `stories` folder:
 
 ```js
 import Foo from '../component/Foo.js'
@@ -85,8 +85,8 @@ export const Variant1 = () => {
 }
 ```
 
-- Although you can integrate `Desech Studio` with `Storybook`, there's no much value to it. You want `Storybook` to see your components in action and understand them better. But with `Desech Studio` you can already do that inside the software.
-- Also, because `Desech Studio` supports overrides and variants, all the data is stored as an object in `dVariants` and `dOverrides`, so you don't have a simple way of visualizing that data in `Storybook`
+- Although you can integrate `Desech Studio` with `Storybook`, there's no much value to it. You use `Storybook` so you can see your components in action and understand them better. But with `Desech Studio` you can already do that inside the software.
+- Also, because `Desech Studio` supports overrides and variants, all the data is stored as objects in `dVariants` and `dOverrides`, so you don't have a simple way of visualizing that data in `Storybook`
 
 ## Plugin Development
 
