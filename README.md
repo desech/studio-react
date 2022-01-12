@@ -60,6 +60,36 @@ npm start
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
 
+## Storybook integration
+
+- Check the [docs](https://storybook.js.org/docs/react/get-started/install) for further reading
+
+```sh
+npx sb init
+export NODE_OPTIONS=--openssl-legacy-provider # linux / mac os only
+set NODE_OPTIONS=--openssl-legacy-provider # windows only
+npm run storybook
+```
+
+- You can start by deleting everything in the `_export/src/stories` folder
+- Then create you first story for one of your components, for example `Foo`:
+
+```js
+import Foo from '../component/Foo.js'
+
+export default {
+  title: 'Foo',
+  component: Foo
+}
+
+export const Variant1 = () => {
+  return <Foo dRef="e0Test" dVariants={{'variant': 'value1'}}></Foo>
+}
+```
+
+- Although you can integrate `Desech Studio` with `Storybook`, there's no much value to it. You want `Storybook` to see your components in action and understand them better. But with `Desech Studio` you can already do that inside the software.
+- Also, because `Desech Studio` supports overrides and variants, all the data is stored as an object in `dVariants` and `dOverrides`, so you don't have a simple way of visualizing that data in `Storybook`
+
 ## Plugin Development
 
 If you plan on helping out with code or extend this plugin, do the following:
@@ -80,6 +110,7 @@ npm run eject
   - you might need to git commit and push all changes before ejecting if you are in a git repo
   - alternatively you can just remove the `.git` folder
 npm install react-router-dom
+npm install prop-types
 rm -rf node_modules public .git package-lock.json yarn.lock
 cd src
 rm -rf App* index.css logo.svg
