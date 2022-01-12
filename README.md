@@ -58,8 +58,6 @@ npm start
 - `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
 - The `className` property set in Desech Studio is ignored because it causes issues with overrides.
 
-- That's it. Ignore the rest if you don't plan on doing development on this plugin.
-
 ## Storybook integration
 
 - Check the [docs](https://storybook.js.org/docs/react/get-started/install) for further reading
@@ -92,7 +90,8 @@ export const Variant1 = () => {
 
 ## Plugin Development
 
-If you plan on helping out with code or extend this plugin, do the following:
+- That's it. Ignore the rest if you don't plan on doing development on this plugin.
+- If you plan on helping out with code or extend this plugin, do the following:
 
 ```sh
 cd /~/user/.config/Electron/plugin
