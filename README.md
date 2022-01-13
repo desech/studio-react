@@ -22,6 +22,18 @@ npm start
 - Now you can access you react app at `http://localhost:3000/`
 - Every time you save inside Desech Studio, it will push updates to the react app
 
+## Storybook integration
+
+- Check the [docs](https://storybook.js.org/docs/react/get-started/install) for further reading
+
+```sh
+export NODE_OPTIONS=--openssl-legacy-provider # linux / mac os only
+set NODE_OPTIONS=--openssl-legacy-provider # windows only
+npm run storybook
+```
+
+- Check the `_export/src/stories` folder for the actual stories
+
 ## Desech Studio integration
 
 ### React attributes/properties
@@ -58,36 +70,6 @@ npm start
 - `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
 - The `className` property set in Desech Studio is ignored because it causes issues with overrides.
 
-## Storybook integration
-
-- Check the [docs](https://storybook.js.org/docs/react/get-started/install) for further reading
-
-```sh
-npx sb init
-export NODE_OPTIONS=--openssl-legacy-provider # linux / mac os only
-set NODE_OPTIONS=--openssl-legacy-provider # windows only
-npm run storybook
-```
-
-- You can start by deleting everything in the `_export/src/stories` folder
-- Then create your first story for one of your components, for example `Foo.stories.js` inside the `stories` folder:
-
-```js
-import Foo from '../component/Foo.js'
-
-export default {
-  title: 'Foo',
-  component: Foo
-}
-
-export const Variant1 = () => {
-  return <Foo dRef="e0Test" dVariants={{'variant': 'value1'}}></Foo>
-}
-```
-
-- Although you can integrate `Desech Studio` with `Storybook`, there's no much value to it. You use `Storybook` so you can see your components in action and understand them better. But with `Desech Studio` you can already do that inside the software.
-- Also, because `Desech Studio` supports overrides and variants, all the data is stored as objects in `dVariants` and `dOverrides`, so you don't have a simple way of visualizing that data in `Storybook`
-
 ## Plugin Development
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
@@ -110,7 +92,9 @@ npm run eject
   - alternatively you can just remove the `.git` folder
 npm install react-router-dom
 npm install prop-types
-rm -rf node_modules public .git package-lock.json yarn.lock
+npx sb init
+- open `.storybook/main.js` and add `staticDirs: ['../public']`
+rm -rf node_modules public .git package-lock.json yarn.lock src/stories
 cd src
 rm -rf App* index.css logo.svg
 - open the `src/index.js` file and delete the `import './index.css';` line
