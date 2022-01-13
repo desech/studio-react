@@ -57,6 +57,7 @@ npm run storybook
 
 ### Tips
 
+- If you're getting a babel error for `NODE_ENV`, then do what it says. Open the `_export/node_modules/babel-preset-react-app/index.js` file and set `const env = 'development'`
 - Make sure you set an `alt` value for images, otherwise react will complain about it
 - `selected` attributes are removed from `<option>` elements; instead use the property `defaultValue` in `<select>` instead of `<option>`
 - SVG code inside html is poorly supported by JSX, so make sure the svg is clean without styles and meta tags
