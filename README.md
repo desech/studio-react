@@ -41,7 +41,7 @@ npm run storybook
 - Anchor links need to follow this format `/contact.html` with a backslash at the beginning and an `.html` extension at the end
   - `<a>` elements are converted to `<Link>` if the url is a relative one. But if there are overrides on that anchor element then we will keep it as an anchor tag.
 - Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code. But it's recommended you set data with `state` not manually add it in Desech Studio through text and attributes. This will help the designer to not have to deal with code.
-- Using js code like `{user}` in text and property values works, but if you add it as a component override, then it will no longer be parsed as code.
+  - If you add it as a component override, then it will no longer be parsed as code.
   - This happens because when dealing with html text, we use `dangerouslySetInnerHTML` and this doesn't render js code inside.
   - As for property values, the overrides are coming from the component parent which has all the data stored as a json. Changing this from strings to actual code will show errors, since we will need those variables set in both the parent component and the child component that has the overrides.
 - `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
@@ -53,7 +53,7 @@ npm run storybook
 
 ### React attributes/properties
 
-- Inside Desech Studio you can add react attributes/properties in the Programming properties for both elements and components
+- Inside Desech Studio you can add react directives in the Programming properties for both elements and components
 - You can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
