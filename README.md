@@ -10,7 +10,7 @@
 
 ## Test the react app
 
-- In Desech Studio add an element to the canvas and Save.
+- In Desech Studio add an element and Save.
 - Every time you save, the react app files will be copied over to the `_export` folder of your desech project.
 - There you can run the following, to test the react app:
 
@@ -19,12 +19,12 @@ npm install --force
 npm start
 ```
 
-- Now you can access you react app at `http://localhost:3000/`
+- Now you can access your react app at `http://localhost:3000/`
 - Every time you save inside Desech Studio, it will push updates to the react app
 
 ## Storybook integration
 
-- Check the [docs](https://storybook.js.org/docs/react/get-started/install) for further reading
+- Check the [docs](https://storybook.js.org/docs/react/writing-stories/introduction) for further reading
 
 ```sh
 export NODE_OPTIONS=--openssl-legacy-provider # linux / mac os only
@@ -76,16 +76,20 @@ npm run storybook
 ## Plugin Development
 
 - That's it. Ignore the rest if you don't plan on doing development on this plugin.
+- It's also probably best to have `Desech Studio` closed during this step.
 - If you plan on helping out with code or extend this plugin, do the following:
 
 ```sh
-cd /~/user/.config/Electron/plugin
+cd "/home/<username>/.config/Desech Studio/plugin"
   - this is the plugins folder of `Desech Studio` on Linux
+  - on Mac it's `/home/<username>/Library/Application Support/Desech Studio/plugin`
+  - on Windows it's `C:/Users/<username>/AppData/Desech Studio/plugin`
 rm -rf desech-studio-react
   - if you have the react plugin already install, delete it
 git clone git@github.com:desech/studio-react.git desech-studio-react
   - you might need to use your own fork of this repo on github
-npm i -f
+cd desech-studio-react
+npm install --force
 cd dist
 rm -rf *
 npx create-react-app my-app
@@ -97,9 +101,9 @@ npm install react-router-dom
 npm install prop-types
 npx sb init
 - open `.storybook/main.js` and add `staticDirs: ['../public']`
-rm -rf node_modules public .git package-lock.json yarn.lock src/stories
+rm -rf node_modules public .git package-lock.json yarn.lock
 cd src
-rm -rf App* index.css logo.svg
+rm -rf App* index.css logo.svg stories
 - open the `src/index.js` file and delete the `import './index.css';` line
 ```
 
