@@ -50,6 +50,7 @@ npm run storybook
 - `selected` attributes are removed from `<option>` elements; instead use the property `defaultValue` in `<select>` instead of `<option>`
 - SVG code inside html is poorly supported by JSX, so make sure the svg is clean without styles and meta tags
 - Note that React handles [white space differently](https://reactjs.org/blog/2014/02/20/react-v0.9.html#jsx-whitespace). In Desech Studio, you will need to add `{' '}` in between in the text inline elements that required it. It's ugly, but blame React for not going with the standards.
+- If you use dots inside attribute/property names, React won't be able to parse the JSX code.
 
 ### React attributes/properties
 
