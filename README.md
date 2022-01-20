@@ -47,7 +47,7 @@ npm run storybook
 - `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
 - If you're getting a babel error for `NODE_ENV`, then do what it says. Open the `_export/node_modules/babel-preset-react-app/index.js` file and set `const env = 'development'`
 - Make sure you set an `alt` value for images, otherwise react will complain about it
-- `selected` attributes are removed from `<option>` elements; instead use the property `defaultValue` in `<select>` instead of `<option>`
+- Instead of `<option>` elements with the `selected` attribute, you should add the attribute`defaultValue` on the `<select>` element.
 - SVG code inside html is poorly supported by JSX, so make sure the svg is clean without styles and meta tags
 - Note that React handles [white space differently](https://reactjs.org/blog/2014/02/20/react-v0.9.html#jsx-whitespace). In Desech Studio, you will need to add `{' '}` in between in the text inline elements that required it. It's ugly, but blame React for not going with the standards.
 - If you use dots inside attribute/property names, React won't be able to parse the JSX code.
