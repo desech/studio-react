@@ -39,7 +39,7 @@ npm run storybook
 ### Tips
 
 - Anchor links need to follow this format `/contact.html` with a backslash at the beginning and an `.html` extension at the end
-  - `<a>` elements are converted to `<Link>` if the url is a relative one. But if there are overrides on that anchor element then we will keep it as an anchor tag.
+  - `<a>` elements are not converted to `<Link>` because how overrides work. You will have to add your own page history code to the application.
 - Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code. Element attributes and properties are also converted to code if they are wrapped between curly brackets, ie `{foo}`
   - If you add it as a component override, then it will no longer be parsed as code.
   - This happens because when dealing with html text, we use `dangerouslySetInnerHTML` and this doesn't render js code inside.
