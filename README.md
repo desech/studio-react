@@ -12,6 +12,7 @@
 
 - In Desech Studio add an element and Save.
 - Every time you save, the react app files will be copied over to the `_export` folder of your desech project.
+- Know that while `Desech Studio` creates new react component files and only updates the named sections, it will not cleanup components that you have removed/moved/renamed. This also applies to storybook files. You will have to manually remove the unneeded react files.
 - There you can run the following, to test the react app:
 
 ```sh
