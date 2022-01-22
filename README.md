@@ -63,16 +63,15 @@ npm run storybook
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
     - `{users.length > 0 && <div>...</div>}`
-  - `reactFor` with `users :: user` will export this react code:
+  - `reactFor` with `user in users` will export this react code:
     - `{users.map(user => <li>...</li>)}`
     - Please remember to add a `key` property too, for example `key` = `{user.id}`
-    - If you don't want a custom `key` then you can just use `reactFor` = `users :: (user, index)` and `key` = `{index}`
-  - `reactIfFor` with `users.length > 0 :: users :: user` will export this react code:
+    - If you don't want a custom `key` then you can just use `reactFor` = `(user, index) in users` and `key` = `{index}`
+  - `reactIfFor` with `users.length > 0 :: user in users` will export this react code:
     - `{users.length > 0 && users.map(user => <li>...</li>)}`
-  - `reactForIf` with `users :: user :: user.id > 0` will export this react code:
+  - `reactForIf` with `user in users :: user.id > 0` will export this react code:
     - `{users.map(user => user.id > 0 && <li>...</li>}`
   - You can only have one of these properties at one time. You can't have both `reactIf` and `reactFor` for example. Instead use `reactIfFor` or `reactForIf`
-  - As you have noticed the split string between these values is a ` :: ` - double colon with spaces in between.
 
 ## Plugin Development
 
