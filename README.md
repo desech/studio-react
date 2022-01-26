@@ -101,7 +101,7 @@ npm run eject
 npm install react-router-dom
 npm install prop-types
 npx sb init
-- open `.storybook/main.js` and add `staticDirs: ['../public']`
+- open `.storybook/main.js` and add `"staticDirs": [ "../public" ],`
 rm -rf node_modules public .git package-lock.json yarn.lock
 cd src
 rm -rf App* index.css logo.svg stories
