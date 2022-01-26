@@ -49,6 +49,7 @@ npm run storybook
 - Make sure you set an `alt` value for images, otherwise react will complain about it
 - Instead of `<option>` elements with the `selected` attribute, you should add the attribute`defaultValue` on the `<select>` element.
 - SVG code inside html is poorly supported by JSX, so make sure the svg is clean without styles and meta tags
+- For textarea elements, you need to use the `defaultValue` property, instead of setting the textarea value field.
 - Note that React handles [white space differently](https://reactjs.org/blog/2014/02/20/react-v0.9.html#jsx-whitespace). In Desech Studio, you will need to add `{' '}` in between the text inline elements that require it.
 - If you use dots inside attribute/property names, React won't be able to parse the JSX code.
 - If you want to use curly brackets `{` and `}` as text, not as JSX code, then set `const [cb, ce, qb, qe] = ['{', '}', '"', '"']` in your `render()` function before the start block, and then in Desech Studio use it like so: `Some object {cb}id: 1{ce}`. This will make react to render it as `Some object {id: 1}`
