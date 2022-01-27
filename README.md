@@ -61,6 +61,8 @@ npm run storybook
 
 - Inside Desech Studio you can add react directives in the Programming properties for both elements and components
 - You can set any react specific attributes like `tabIndex`, `onClick`, `dangerouslySetInnerHTML`, etc.
+  - If you want to set `dangerouslySetInnerHTML`, then you must use a block, not a text element and then set the value for the property to `{{ __html: '<b>bold</b' }}`
+  - If you try to override `dangerouslySetInnerHTML` it will result in a JSX parsing error
 - To use `if conditions` or `for loops` you need to use `reactIf` or `reactFor`, similar to how angular and vue works:
   - `reactIf` with `users.length > 0` will export this react code:
     - `{users.length > 0 && <div>...</div>}`
