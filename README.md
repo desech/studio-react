@@ -52,10 +52,10 @@ npm run storybook
 - For textarea elements, you need to use the `defaultValue` property, instead of setting the textarea value field.
 - Note that React handles [white space differently](https://reactjs.org/blog/2014/02/20/react-v0.9.html#jsx-whitespace). In Desech Studio, you will need to add `{' '}` in between the text inline elements that require it.
 - If you use dots inside attribute/property names, React won't be able to parse the JSX code.
-- If you want to use curly brackets `{` and `}` as text, not as JSX code, then set `const [cb, ce, qb, qe] = ['{', '}', '"', '"']` in your `render()` function before the start block, and then in Desech Studio use it like so: `Some object {cb}id: 1{ce}`. This will make react to render it as `Some object {id: 1}`
+- If you want to use curly brackets `{` and `}` as text, not as JSX code, then set use `{'{'}` and `{'}'}`, and then in Desech Studio use it like so: `Some object {'{'}id: 1{'}'}`. This will make react to render it as `Some object {id: 1}`
   - If the information is coming from the database, then you will have to parse your text and replace all curly brackets with the corresponding variable
 - When we replace attribute value strings with JSX code we will remove the extra quotes. If you have some random text inside an html element like `attribute="{curly}"`, after the replace, it will become `attribute={curly}`, without the quotes.
-  - If you want the quotes, then use this text inside Desech Studio `attribute={qb}{curly}{qe}`
+  - If you want the quotes, then use this text inside Desech Studio `attribute={'"'}{curly}{'"'}`
 
 ### React attributes/properties
 
