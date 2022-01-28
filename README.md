@@ -40,10 +40,10 @@ npm run storybook
 ### Tips
 
 - Anchor links need to follow this format `/contact.html` with a backslash at the beginning and an `.html` extension at the end
-  - `<a>` elements are not converted to `<Link>` because how overrides work. You will have to add your own page history code to the application.
-- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code. Element attributes and properties are also converted to code if they are wrapped between curly brackets, ie `{foo}`
+  - `<a>` elements are not converted to `<Link>` because of how overrides work. You will have to add your own page history code to the application.
+- Anywhere inside text you can write code like `{user.userId}` and it will be exported as react JSX code.
+  - Element attributes and properties are also converted to code if they are wrapped between curly brackets, ie `{foo}`
   - If you add it as a component override, then it will no longer be parsed as code.
-  - This happens because when dealing with html text, we use `dangerouslySetInnerHTML` and this doesn't render js code inside.
 - `reactIf`, `reactFor`, etc can't be used as component overrides. If you do override them, then the overrides will simply be ignored.
 - If you're getting a babel error for `NODE_ENV`, then do what it says. Open the `_export/node_modules/babel-preset-react-app/index.js` file and set `const env = 'development'`
 - Make sure you set an `alt` value for images, otherwise react will complain about it
@@ -52,10 +52,11 @@ npm run storybook
 - For textarea elements, you need to use the `defaultValue` property, instead of setting the textarea value field.
 - Note that React handles [white space differently](https://reactjs.org/blog/2014/02/20/react-v0.9.html#jsx-whitespace). In Desech Studio, you will need to add `{' '}` in between the text inline elements that require it.
 - If you use dots inside attribute/property names, React won't be able to parse the JSX code.
-- If you want to use curly brackets `{` and `}` as text, not as JSX code, then set use `{'{'}` and `{'}'}`, and then in Desech Studio use it like so: `Some object {'{'}id: 1{'}'}`. This will make react to render it as `Some object {id: 1}`
+- If you want to use curly brackets `{` and `}` as text, not as JSX code, then use `{'{'}` and `{'}'}` like so: `Some object {'{'}id: 1{'}'}`. This will make react to render it as `Some object {id: 1}`
   - If the information is coming from the database, then you will have to parse your text and replace all curly brackets with the corresponding variable
 - When we replace attribute value strings with JSX code we will remove the extra quotes. If you have some random text inside an html element like `attribute="{curly}"`, after the replace, it will become `attribute={curly}`, without the quotes.
   - If you want the quotes, then use this text inside Desech Studio `attribute={'"'}{curly}{'"'}`
+- `className` properties are ignored
 
 ### React attributes/properties
 
