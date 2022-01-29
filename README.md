@@ -57,6 +57,7 @@ npm run storybook
 - When we replace attribute value strings with JSX code we will remove the extra quotes. If you have some random text inside an html element like `attribute="{curly}"`, after the replace, it will become `attribute={curly}`, without the quotes.
   - If you want the quotes, then use this text inside Desech Studio `attribute={'"'}{curly}{'"'}`
 - `className` properties are ignored
+- You can not unrender the root element of a component because the inserted if condition will trigger a JSX parsing error
 
 ### React attributes/properties
 
